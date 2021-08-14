@@ -1,0 +1,9 @@
+.DS_Store
+notes.txt
+**/credentials.json
+**/*.tfvars
+**/.terraform/
+**/.terraform.lock.hcl
+**/terraform.tfstate
+
+

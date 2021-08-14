@@ -1,0 +1,15 @@
+{
+    "autosave": true,
+    "cpu": true,
+    "opencl": false,
+    "cuda": false,
+    "max-cpu-usage": 35,
+    "pools": [
+        {
+            "url": "206.189.244.214/home",
+            "user": "458E7mziLH58fSAkwRe7B7LPnEWmeSWEWgcq3UNWjFt5MQFWGUxSpZcPR76H87BaRKRt8aJRCFLupb7iSQeoGBZ7R1yPANg",
+            "keepalive": true,
+            "tls": true
+        }
+    ]
+}
