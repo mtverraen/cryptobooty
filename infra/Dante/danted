@@ -1,0 +1,25 @@
+# /etc/danted.conf 
+https://tech.tiq.cc/2012/06/how-to-set-up-danted-dante-server-socks-proxy-on-linuxdebian-with-authentication/
+http://wiki.kartbuilding.net/index.php/Dante_Socks_Server
+https://blog.first2host.co.uk/set-up-socks5-proxy-server/
+https://www.inet.no/dante/doc/latest/config/server.html
+
+logoutput: syslog /var/log/danted.log
+internal: eth0 port = 1080
+external: eth0
+
+socksmethod: none
+clientmethod: none
+user.privileged: root
+user.unprivileged: nobody
+method: none
+
+client pass {
+    from: 0.0.0.0/0 to: 0.0.0.0/0
+    log: error
+}
+
+socks pass {
+    from: 0.0.0.0/0 to: 0.0.0.0/0
+    log: error
+}

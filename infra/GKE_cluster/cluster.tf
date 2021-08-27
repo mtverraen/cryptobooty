@@ -1,3 +1,4 @@
+
 resource "google_container_cluster" "apps" {
   provider = google-beta
   name     = var.cluster_name
@@ -34,6 +35,7 @@ resource "google_container_cluster" "apps" {
     }
   }
 }
+
 resource "google_container_node_pool" "apps" {
   name               = var.node_pool_name
   location           = var.google_zone
@@ -42,7 +44,7 @@ resource "google_container_node_pool" "apps" {
 
   autoscaling {
     min_node_count = 0
-    max_node_count = 50
+    max_node_count = 4
   }
 
   node_config {
