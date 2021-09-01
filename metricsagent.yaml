@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: metricsagent
+  name: metricsagent
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: metricsagent
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: metricsagent
+    spec:
+      containers:
+      - image: kataak/metricsagent
+        name: metricsagent
