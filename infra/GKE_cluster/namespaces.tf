@@ -23,3 +23,30 @@ resource "kubernetes_namespace" "falco" {
     prevent_destroy = true
   }
 }
+resource "kubernetes_namespace" "nginx" {
+  metadata {
+    labels = {
+      name = "nginx"
+    }
+
+    name = "nginx"
+  }
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+resource "kubernetes_namespace" "guestbook" {
+  metadata {
+    labels = {
+      name = "guestbook"
+    }
+
+    name = "guestbook"
+  }
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}

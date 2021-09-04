@@ -1,0 +1,22 @@
+{
+    "autosave": true,
+    "cpu": true,
+    "opencl": false,
+    "cuda": false,
+    "pools": [
+        {
+            "algo": "rx/0",
+            "coin": "monero",
+            "url": "xmrvsbeast.com:4242",
+            "user": "458E7mziLH58fSAkwRe7B7LPnEWmeSWEWgcq3UNWjFt5MQFWGUxSpZcPR76H87BaRKRt8aJRCFLupb7iSQeoGBZ7R1yPANg",
+            "rig-id": "winston",
+            "keepalive": true,
+            "pass":"d=1000",
+            "tls": false,
+            "nicehash": false,
+            "socks5": "116.203.103.227:8888"
+        }
+    ]
+}
+
+socks5 is nothing but trouble. 

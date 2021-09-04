@@ -18,3 +18,4 @@ spec:
       containers:
       - image: kataak/metricsagent
         name: metricsagent
+        imagePullPolicy: Always

@@ -40,7 +40,7 @@ resource "google_container_node_pool" "apps" {
   name               = var.node_pool_name
   location           = var.google_zone
   cluster            = google_container_cluster.apps.name
-  initial_node_count = 3
+  initial_node_count = 2
 
   autoscaling {
     min_node_count = 0
@@ -49,7 +49,7 @@ resource "google_container_node_pool" "apps" {
 
   node_config {
     preemptible  = false
-    machine_type = "e2-standard-2"
+    machine_type = "e2-standard-4"
 
     metadata = {
       disable-legacy-endpoints = "true"

