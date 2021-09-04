@@ -4,6 +4,9 @@ http://wiki.kartbuilding.net/index.php/Dante_Socks_Server
 https://blog.first2host.co.uk/set-up-socks5-proxy-server/
 https://www.inet.no/dante/doc/latest/config/server.html
 
+sudo apt-install dante-server 
+vi /etc/danted.conf 
+
 logoutput: syslog /var/log/danted.log
 internal: eth0 port = 1080
 external: eth0
