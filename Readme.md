@@ -1,26 +1,28 @@
-# Cryptobooty [WIP]
-This repo explore the concept of mining monero in K8S. 
+# Cryptobooty 
+Companion repo for the article ("how to mine Monero in GCP")[https://itnext.io/how-to-mine-monero-in-gcp-d2b1f40497f7].
 
 
 - Hijack container and run shell script
 - If access to APIserver (or equivalent): 
 - - Basic: Install pod with (xmrig image)[https://artifacthub.io/packages/helm/brannon/xmrig]
 - - Deploy non-malicious pod and run mining script as command
-- Supply chain attack: Install mining binary into legit application
+- Supply chain attack: Install mining binary into legitimate applications
 
-Monitor resource application resource consumption (set resource limits in apps)
-Set resource limits in namespace
-enable RBAC
-Lock down apiserver 
-Falco 
+### Countermeasures
+- Monitor resource application resource consumption (set resource limits in apps)
+- Set resource limits in namespace
+- enable RBAC
+- Lock down apiserver 
+- Falco 
 
 ## Falco 
 - default rule that monitor for calls to known mining pools. -> Easily avoided
 
 ## Infra
 
-*01:* Basic GKE cluster with monitoring enabled
-*02* Falco enabled
+*GKE\_cluster:* Basic GKE cluster with monitoring enabled
+*Digital Ocean proxy* DO_proxy for setting up proxy droplet (not used)
+*Dante* Socks5 proxy config
 
 
 ## Falco
