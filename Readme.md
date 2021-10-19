@@ -1,4 +1,4 @@
-# Cryptobooty
+# Cryptobooty [WIP]
 This repo explore the concept of mining monero in K8S. 
 
 
@@ -15,7 +15,7 @@ Lock down apiserver
 Falco 
 
 ## Falco 
-- defualt rule that monitor for calls to known mining pools. -> Easily avoided
+- default rule that monitor for calls to known mining pools. -> Easily avoided
 
 ## Infra
 
