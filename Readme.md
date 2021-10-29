@@ -25,9 +25,8 @@ helm install falco falcosecurity/falco --set falcosidekick.enabled=true --values
 ```
 
 ## Infra
-
-*GKE\_cluster:* Basic GKE cluster with monitoring enabled
-*Digital Ocean proxy* DO_proxy for setting up proxy droplet (not used)
-*Dante* Socks5 proxy config
+- *GKE\_cluster:* Basic GKE cluster with monitoring enabled
+- *Digital Ocean proxy* DO_proxy for setting up proxy droplet (not used)
+- *Dante* Socks5 proxy config
 
 
